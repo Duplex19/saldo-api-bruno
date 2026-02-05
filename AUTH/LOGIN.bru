@@ -1,0 +1,35 @@
+meta {
+  name: LOGIN
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url_local}}/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email" : "duplex1909@gmail.com",
+    "password" : "12345678"
+  }
+}
+
+script:post-response {
+  var response = res.getBody();
+  
+  if (response.metadata.token){
+      bru.setEnvVar('token', response.metadata.token)
+  } else {
+      console.log('Login Failed : Token Not Found')
+  }
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

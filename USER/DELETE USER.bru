@@ -1,0 +1,16 @@
+meta {
+  name: DELETE USER
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{url_local}}/users/019c293a-3e5e-7226-b58f-327607dfc7da
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

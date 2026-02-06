@@ -1,12 +1,12 @@
 meta {
-  name: IMPORT DATA EXCEL
+  name: LOG FILE UPLOAD
   type: http
-  seq: 1
+  seq: 2
 }
 
-post {
-  url: {{url_local}}/import
-  body: multipartForm
+get {
+  url: {{url_local}}/file-uploads
+  body: none
   auth: bearer
 }
 

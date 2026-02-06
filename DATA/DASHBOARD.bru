@@ -1,0 +1,30 @@
+meta {
+  name: DASHBOARD
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url_local}}/dashboard
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~mode: harian
+  ~date: 2025-12-01
+  ~mode: range
+  ~start_date: 2025-12-01
+  ~end_date: 2025-12-30
+  ~mode: bulanan
+  ~month: 2025-12
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

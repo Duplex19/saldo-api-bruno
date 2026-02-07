@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{url_local}}/dashboard
+  url: {{url_server}}/dashboard?mode=harian&date=2025-12-01
   body: none
   auth: bearer
 }
 
 params:query {
-  ~mode: harian
-  ~date: 2025-12-01
+  mode: harian
+  date: 2025-12-01
   ~mode: range
   ~start_date: 2025-12-01
   ~end_date: 2025-12-30
